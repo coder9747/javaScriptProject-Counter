@@ -75,7 +75,7 @@ ul a {
     .responsiveNav {
         display: block;
         position: absolute;
-        width:100vw;
+        width:200px;
         height: max-content;
         padding: 20px;
         flex-direction: column;
