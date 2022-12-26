@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;600&family=Roboto:wght@300;900&display=swap');
+*{transition:all 0.5s ease-in-out}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family:"Roboto",sans-serif;
+    background-color: #6E85B7;
+}
+
+.box {
+    /* border: 2px solid red; */
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.5s ease;
+}
+
+.items {
+    width: 400px;
+}
+
+.items h3 {
+    /* border: 2px solid green; */
+    height:max-content;
+    padding:10px;
+    width:370px;
+    background-color: azure;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content:space-between;
+}
+p {
+    display: none;
+    transition: all 0.5s ease-in-out;
+    height: 0;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    font-size: 0.9rem;
+    background-color:#B2C8DF;
+    margin-top:20px;
+    padding:10px;
+    line-height: 2;
+    justify-content: start;
+}
+
+.active {
+    display: block;
+    transition: all 0.5s ease-in-out;
+    height: max-content;
+    padding: 10px 5px;
+    transition: all 0.5s ease-in-out;
+}
+.rotate
+{
+    transform:rotate(180deg);
+}
