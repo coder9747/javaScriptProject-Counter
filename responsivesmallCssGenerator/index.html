@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="first">
+            <div class="box"></div>
+        </div>
+        <div class="second">
+            <div class="left">
+                <div class="width">
+                    <span>Width</span>
+                    <input type="range" min="100" max="300">
+                </div>
+                <div class="height">
+                    <span>Height</span>
+                    <input type="range" min="100" max="300">
+                </div>
+                <div class="border-radius">
+                    <span>border-radius</span>
+                    <input type="range" min="0" max="50">
+                </div>
+                <div class="opacity">
+                    <span>opacity</span>
+                    <input type="range" min="0" max="100">
+                </div>
+            </div>
+            <div class="right">
+                <div class="itemX">Box-Shadow</div>
+                <div class="itemX">
+                    <span>X</span>
+                    <input type="range" min="0" max="30" class="x">
+                </div>
+                <div class="itemX">
+                    <span >Y</span>
+                    <input type="range" min="0" max="30"  class="y">
+                </div>
+                <div class="itemX">
+                    <span>Blur radius</span>
+                    <input type="range" min="0" max="30" class="br">
+                </div>
+                <div class="itemX">
+                    <span>Sphered Radius</span>
+                    <input type="range" min="0" max="30" class="sr">
+                </div>
+                <div class="itemX">
+                    <span>Color</span>
+                    <input type="color" style="align-self: center;"  class="color">
+                </div>
+                <div class="getStyle style-btn">
+                    Get Style
+                </div>
+                <div class="reset style-btn">
+                    Reset
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script src="./main.js"></script>
+</body>
+</html>
