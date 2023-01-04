@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(./img/bg.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            height: 90vmin;
+            width: 90vmin;
+            border: 2px solid black;
+            display: grid;
+            grid-template-columns: repeat(18, 1fr);
+            grid-template-rows: repeat(18, 1fr);
+        }
+
+        .head {
+            background-color: rgb(255, 62, 62);
+        }
+
+        .food {
+            background-color: blueviolet;
+        }
+
+        .snakeBody {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        //Variables 
+        let foodSound = new Audio("food.mp3");
+        let gameOver = new Audio("gameover.mp3");
+        let backgroundSound = new Audio("music.mp3");
+        let lastPaintTime = 0;
+        let speed = 5;
+        let board = document.querySelector(".container");
+        let food = { x: 9, y: 3 };
+        let inputDir = { x: 0, y: 0 };
+        let a = 2;
+        let b = 16;
+        let snakeArr = [
+            { x: 4, y: 10 }
+        ]
+        // gameFunction 
+        function isCollide() {
+
+            return false;
+        }
+        function gameEngine() {
+
+            //Update The Snake 
+            if (isCollide()) {
+                snakeArr = { x: 4, y: 10 };
+                food = { x: 9, y: 3 };
+                inputDir = { x: 0, y: 0 };
+                alert("Game Over");
+            }
+            //if You Eat The food;
+            if (snakeArr[0].x === food.x && snakeArr[0].y === food.y) {
+                snakeArr.unshift({ x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y })
+                food.x = Math.round(a + (b - a) * Math.random());
+                food.y = Math.round(a + (b - a) * Math.random());
+            }
+            //Moving the snake
+            for (let i = snakeArr.length - 2; i >= 0; i--) {
+                snakeArr[i + 1] = { ...snakeArr[i] };
+            }
+            snakeArr[0].x += inputDir.x;
+            snakeArr[0].y += inputDir.y;
+            //Display The Snake;
+            board.innerHTML = "";
+            snakeArr.forEach((e, index) => {
+                let box = document.createElement("div");
+                box.style.gridColumnStart = e.x;
+                box.style.gridRowStart = e.y;
+                if (index == 0) 
+                {
+                    box.classList.add("head");
+                }
+                else {
+                    box.classList.add("snakeBody");
+                }
+                board.appendChild(box);
+
+            })
+            //Display A food ;
+            let foodEle = document.createElement("div");
+            foodEle.style.gridColumnStart = food.x;
+            foodEle.style.gridRowStart = food.y;
+            foodEle.classList.add("food");
+            board.appendChild(foodEle);
+        }
+        function main(ctime) {
+            window.requestAnimationFrame(main);
+            if (((ctime - lastPaintTime) / 1000) < 1 / speed) {
+                return;
+            }
+            lastPaintTime = ctime;
+            
+            gameEngine();
+
+        }
+        // main Logic
+        window.requestAnimationFrame(main);
+        window.addEventListener("keydown", (e) => {
+            inputDir = { x: 0, y: 1 };
+            switch (e.key) {
+                case "ArrowUp":
+                    {
+                        inputDir.x = 0;
+                        inputDir.y = -1;
+                        break;
+
+                    }
+                case "ArrowDown":
+                    {
+                        inputDir.x = 0;
+                        inputDir.y = 1;
+                        break;
+
+
+                    }
+                case "ArrowLeft":
+                    {
+                        inputDir.x = -1;
+                        inputDir.y = 0;
+                        break;
+
+                    }
+                case "ArrowRight":
+                    {
+                        inputDir.x = 1;
+                        inputDir.y = 0;
+                        break;
+
+                    }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
