@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(48, 48, 214), rgb(139, 14, 139))
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-height: 600px;
+    /* border: 2px solid red; */
+    padding: 1rem;
+    color: #fff;
+    background-color: rgb(34, 24, 44);
+}
+
+.thid {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid green; */
+}
+
+.thid>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first {
+    text-align: center;
+    margin: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.second {
+    /* border:2px solid red; */
+    position: relative;
+    height: 40px;
+}
+
+.input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.container>div,
+.thid>div {
+    margin-bottom: 20px;
+}
+
+.copy {
+    position: absolute;
+    z-index: 9;
+    right: 0;
+    top: px;
+    /* border:2px solid red; */
+    height: 100%;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(13, 163, 138);
+}
+
+.number {
+    width: 40px;
+}
+
+.btn {
+    height: 40px;
+    background-color: rgb(91, 44, 91);
+    color: #fff;
+}
