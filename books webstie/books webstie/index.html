@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/3b4b627952.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;400;600&family=Roboto:wght@300;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+       
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* border:2px solid red; */
+            height: 40px;
+            width: 100%;
+            padding:10px 0px;
+            box-shadow: 3px 2px 5px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+
+        .brand {
+            font-size: 1.6rem;
+            color: rgb(94, 216, 113);
+        }
+
+        .brand i {
+            margin-right: 10px;
+        }
+
+        .inputBox {
+            position: relative;
+            width: 30%;
+            height: 80%;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .input {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            outline: 0;
+            border: 1px solid gray;
+            background-color: aliceblue;
+            ;
+            border-radius: 9px;
+            font-size: .1.3rem;
+        }
+
+        .inputBox .search {
+            position: absolute;
+            right: 1px;
+            /* border:2px solid red; */
+            height: 100%;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-search {
+            display: none;
+        }
+
+        .icons {
+            font-size: 1.23rem;
+            /* border:2px solid red;s */
+            width: 30%;
+            text-align: center;
+        }
+
+        .icons>* {
+            margin-left: 20px;
+            color: rgb(94, 216, 113);
+
+        }
+
+        /* ===============End-Of-Nav=================== */
+        section {
+            padding: 3rem 9%;
+            box-sizing: border-box;
+        }
+
+        #home {
+            height: 35rem;
+            /* border:2px solid red; */
+            width: 100%;
+            display: flex;
+            background: url("./image/banner-bg.jpg");
+            background-position: center;
+            background-size: cover;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .first {
+            /* border:2px solid green; */
+            flex-basis: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+            text-align: start;
+        }
+
+        .second {
+            /* border:2px solid green; */
+            flex-basis: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .btn {
+            height: 3rem;
+            width: 8rem;
+            background-color: rgb(14, 109, 6);
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            padding: 0.4rem;
+            color: white;
+            margin-top: 14px;
+            cursor:pointer;
+        }
+
+        #home img {
+            height: 15rem;
+            transition: all 0.5s ease-in-out;
+
+        }
+
+        #home img:hover {
+            transform: scale(0.9);
+        }
+
+        h3 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        /* ------End-Of-Home---- */
+        #feature {
+            height: max-content;
+            padding: 2rem 5rem;
+            /* border: 2px solid red; */
+        }
+
+        #feature h2 {
+            text-align: center;
+            letter-spacing: 3px;
+
+        }
+
+        h2 {
+            font-size: 1rem;
+        }
+
+        .btn-cart {
+            background-color: rgb(59, 100, 59);
+            padding: 1rem;
+            border-radius: 8px;
+            color: #fff;
+            margin-top: 1rem;
+        }
+
+        .feature-heading {
+            font-size: 3rem;
+        }
+
+        /* ---End-of-Features----- */
+        .newsletter {
+            background: url("/image/letter-bg.jpg") no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            /* border: 2px solid red; */
+            background-attachment: fixed;
+        }
+
+        .newsletter form {
+            max-width: 45rem;
+            margin-left: auto;
+            text-align: center;
+            padding: 5rem 0rem;
+        }
+
+        .newsletter form h3 {
+            font-size: 2rem;
+            color: #fff;
+            padding-bottom: 0.5rem;
+        }
+
+        .newsletter form input:nth-of-type(1) {
+            color: black;
+            padding: 0.5rem;
+            border-radius: 9px;
+            outline: none;
+            border: 0;
+
+
+        }
+
+        .newsletter form input:nth-of-type(2) {
+            background-color: rgb(82, 87, 85);
+            ;
+            outline: none;
+            border: 0;
+
+        }
+
+        /* -----End-Of-Newsletter----- */
+        .arivals {
+            /* border:2px solid red; */
+        }
+
+        .arivals-heading {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .wrappper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .box-arivals {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            /* border:2px solid red; */
+            border: 1px solid gray;
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+
+        }
+
+        .box-arivals .img img {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* -----End-of-Arivals--- */
+        .deal {
+            display: flex;
+            background-color: rgb(228, 226, 226);
+        }
+
+        .deal>* {
+            flex-basis: 100%;
+        }
+
+        .deal .one {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: start;
+        }
+
+        .one h4 {
+            color: green;
+            font-size: 2rem;
+            margin-bottom: .8rem;
+        }
+
+        .one h2 {
+            margin-bottom: 1.2rem;
+            font-size: 3rem;
+        }
+
+        .one p {
+            text-align: center;
+        }
+
+        .deal .two img {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* --------End-Of-Arivals------ */
+        .client-review {
+            background-color: rgb(123, 158, 189);
+            height: 40rem;
+
+        }
+        .client-box
+        {
+            padding:2rem;
+        }
+
+        .client-text {
+            text-align: center;
+            font-size: 3rem;
+            letter-spacing: 3px;
+        }
+        .client-box .client-image
+        {
+            height:50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left:50%;
+            transform:translate(-50%);
+        }
+        .client-box h2
+        {
+            font-size:1.9rem;
+            margin:1rem 0px;
+        }
+        .blog-heading
+        {
+            font-size:2rem;
+            text-align:center;
+            margin-bottom:2rem;
+        }
+        .blog-container
+        {
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:10px;
+        }
+        .blog-third,.blog-second,.blog-first
+        {
+            height:25rem;
+            border:1px solid gray;
+            padding:10px 10px;
+            padding-bottom:0;
+            border-radius:9px;
+        }
+        .bolg-img
+        {
+            height:50%;
+            width:100%;
+            /* border-radius:9px; */
+        }
+        .blog-container h3
+        {
+            font-size:1.2rem;
+            margin-top:10px;
+        }
+        .blog-container p
+        {
+            color:rgb(145, 142, 137);
+            font-size:.8rem;
+        }
+        .blog-btn
+        {
+            margin-top:1.3rem;
+            border-radius: 7px;
+            border:0;
+            outline:0;
+            cursor:pointer;
+        }
+        /* ---End-Of-blog--- */
+        .contact-us
+        {
+            height:max-content;
+            /* border:2px solid red; */
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            position:relative;
+            background-color: rgb(59, 65, 66);
+            padding:5.3rem 4rem;
+        }
+        .heading-contact-us
+        {
+            position:absolute;
+            left:50%;
+            transform:translate(-50%);
+            font-size:2rem;
+            color:green;
+           
+        }
+        .contact-us > *{
+            height:50px;
+            padding:10px;
+            /* border:2px solid red; */
+            margin:0px 10px;
+        }
+        .contact-us h3
+        {
+            font-size:1.5rem;
+            color:#fff;
+        }
+        .contact-us p
+        {
+            font-size:1.2rem;
+            color:#fff;
+        }
+        .Social-media
+        {
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            font-size:2rem;
+            color:rgb(133, 143, 133);
+        }
+        .Social-media > *:hover{
+            color:green;
+
+        }
+        /* ------End-Of-contact-us--- */
+        #name
+        {
+            margin-top:10px;
+            font-size:2rem;
+            text-align:center;
+            color:rgb(31, 7, 7);
+            letter-spacing: 2px;
+
+        }
+        
+
+
+
+
+
+        /* ------------Swiper-js------------ */
+        .swiper {
+            width: 100%;
+            height: 30rem;
+            /* border: 2px solid red; */
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .swiper-slide img {
+            display: block;
+            height: 20rem;
+            object-fit: cover;
+        }
+
+        /* ----Swiper-Second---- */
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+        }
+
+
+
+
+
+        @media (max-width:998px) {
+            section {
+                padding: 3rem 2rem;
+            }
+
+            html {
+                font-size: 80%;
+            }
+
+            .btn-cart {
+                background-color: rgb(59, 100, 59);
+                padding: 1rem;
+                border-radius: 8px;
+                color: #fff;
+                margin-top: 1rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width:768px) {
+            .mobile-search {
+                display: block;
+            }
+
+            .inputBox {
+                position: absolute;
+                top: -70px;
+                height: 40px;
+                width: 90%;
+                /* display: none; */
+            }
+
+            .activeSearch {
+                top: 70px;
+            }
+
+            .icons {
+                width: 59%;
+                /* border:2px solid red; */
+                display: flex;
+
+            }
+
+            #home {
+                flex-direction: column;
+                height: max-content;
+                padding-bottom: 2rem;
+            }
+
+            .second {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                place-items: center;
+
+            }
+
+            .wrappper {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+            }
+            .client-review
+            {
+                height:45rem;
+
+            }
+            .blog-container
+            {
+                grid-template-columns: 1fr;
+                place-items:center;
+
+            }
+            .blog-third,.blog-second,.blog-first
+            {
+                height:20rem;
+                width:60%;
+            }
+            .contact-us
+            {
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+            }
+            .contact-us >*{
+                display: flex;
+                flex-direction: column;
+                justify-content:center;
+                align-items:center;
+            }
+            .Social-media
+            {
+                flex-direction: row;
+                justify-content:space-around;
+                align-items:center;
+            }
+
+        }
+
+        @media (max-width:576px) {
+            html {
+                font-size: 65%;
+            }
+
+            .wrappper {
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+
+            .deal {
+                flex-direction: column;
+            }
+
+            .one {
+                margin-bottom: 1rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="brand"><i class="fa-solid fa-book"></i>Bookly</div>
+        <div class="inputBox">
+            <input type="text" class="input" placeholder="Search...">
+            <div class="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+        <div class="icons">
+            <a href="#"><i class="fa-solid fa-house"></i></a>
+            <a href="#" class="mobile-search"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <!-- <a href="#"><i class="fa-solid fa-heart"></i></a> -->
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+        </div>
+
+    </nav>
+    <!-- -------End-Of-Nav-------- -->
+    <section id="home">
+        <div class="first">
+            <h3>upto 75% off</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus veritatis vero alias accusamus dicta
+                facere facilis molestias odio animi eligendi placeat quia quos deleniti optio. Non.</p>
+            <div class="btn">Shop Now</div>
+        </div>
+        <div class="second">
+            <img src="./image/book-1.png" alt="" srcset="">
+            <img src="./image/book-2.png" alt="" srcset="">
+            <img src="./image/book-3.png" alt="" srcset="">
+            <img src="./image/book-4.png" alt="" srcset="">
+            <img src="./image/book-5.png" alt="" srcset="">
+            <img src="./image/book-6.png" alt="" srcset="">
+        </div>
+    </section>
+    <!-- --End-Of-Home--- -->
+    <section id="feature">
+        <h2 id="feature-heading" style="font-size:3rem;">Feature Books</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+
+                    <div class="image">
+                        <img src="./image/book-1.png" alt="" srcset="">
+                    </div>
+                    <div class="content">
+                        <h2>Featured Books</h2>
+                        <div class="price">$15.99</div>
+                        <div class="btn-cart">Add To Cart</div>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <img src="./image/book-1.png" alt="" srcset="">
+                    </div>
+                    <div class="content">
+                        <h2>Featured Books</h2>
+                        <div class="price">$15.99</div>
+                        <div class="btn-cart">Add To Cart</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <img src="./image/book-1.png" alt="" srcset="">
+                    </div>
+                    <div class="content">
+                        <h2>Featured Books</h2>
+                        <div class="price">$15.99</div>
+                        <div class="btn-cart">Add To Cart</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <img src="./image/book-1.png" alt="" srcset="">
+                    </div>
+                    <div class="content">
+                        <h2>Featured Books</h2>
+                        <div class="price">$15.99</div>
+                        <div class="btn-cart">Add To Cart</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <img src="./image/book-1.png" alt="" srcset="">
+                    </div>
+                    <div class="content">
+                        <h2>Featured Books</h2>
+                        <div class="price">$15.99</div>
+                        <div class="btn-cart">Add To Cart</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image">
+                        <img src="./image/book-1.png" alt="" srcset="">
+                    </div>
+                    <div class="content">
+                        <h2>Featured Books</h2>
+                        <div class="price">$15.99</div>
+                        <div class="btn-cart">Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- ----End-of-feature-section--- -->
+    <section class="newsletter">
+        <form action="">
+            <h3>Subscribe For Latest Up Dates</h3>
+            <input type="email" name=" " id="" placeholder="Enter your email...">
+            <input type="submit" value="subscribe" class="btn-cart">
+        </form>
+    </section>
+    <!-- -----End-Of-newsletter---- -->
+    <section class="arivals">
+        <h2 class="arivals-heading"><span>New Arivals</span></h2>
+        <div class="wrappper">
+            <div class="box-arivals">
+                <div class="img">
+                    <img src="./image/blog-1.jpg" alt="" srcset="">
+                </div>
+                <div class="content">
+                    <h4>New Arivals</h4>
+                    <p>$15.99</p>
+                    &starf;
+                    &starf;
+                    &starf;
+                    &starf;
+                    &star;
+                </div>
+
+            </div>
+            <div class="box-arivals">
+                <div class="img">
+                    <img src="./image/blog-1.jpg" alt="" srcset="">
+                </div>
+                <div class="content">
+                    <h4>New Arivals</h4>
+                    <p>$15.99</p>
+                    &starf;
+                    &starf;
+                    &starf;
+                    &starf;
+                    &star;
+                </div>
+
+            </div>
+            <div class="box-arivals">
+                <div class="img">
+                    <img src="./image/blog-1.jpg" alt="" srcset="">
+                </div>
+                <div class="content">
+                    <h4>New Arivals</h4>
+                    <p>$15.99</p>
+                    &starf;
+                    &starf;
+                    &starf;
+                    &starf;
+                    &star;
+                </div>
+
+            </div>
+            <div class="box-arivals">
+                <div class="img">
+                    <img src="./image/blog-1.jpg" alt="" srcset="">
+                </div>
+                <div class="content">
+                    <h4>New Arivals</h4>
+                    <p>$15.99</p>
+                    &starf;
+                    &starf;
+                    &starf;
+                    &starf;
+                    &star;
+                </div>
+
+            </div>
+            <div class="box-arivals">
+                <div class="img">
+                    <img src="./image/blog-1.jpg" alt="" srcset="">
+                </div>
+                <div class="content">
+                    <h4>New Arivals</h4>
+                    <p>$15.99</p>
+                    &starf;
+                    &starf;
+                    &starf;
+                    &starf;
+                    &star;
+                </div>
+
+            </div>
+            <div class="box-arivals">
+                <div class="img">
+                    <img src="./image/blog-1.jpg" alt="" srcset="">
+                </div>
+                <div class="content">
+                    <h4>New Arivals</h4>
+                    <p>$15.99</p>
+                    &starf;
+                    &starf;
+                    &starf;
+                    &starf;
+                    &star;
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="deal">
+        <div class="one">
+            <h4 class="text-deal">Deal of The Day</h4>
+            <h2>Up To 50% Off</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, mollitia!
+
+            </p>
+            <button class="btn">Shop Now</button>
+        </div>
+        <div class="two">
+            <img src="./image/deal-img.jpg" alt="" srcset="">
+        </div>
+    </section>
+    <!-- ----End-Of-Arivals----- -->
+    <section class="client-review">
+        <h2 class="client-text">Client Review</h2>
+        <div class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <!-- <img src="https://swiperjs.com/demos/images/nature-1.jpg" /> -->
+                    <div class="client-box">
+                        <img src="./image/pic-1.png" alt="" class="client-image">
+                        <h2>John Doe</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, hic sed! Temporibus aliquam quam molestias exercitationem eaque, error sapiente? A!</p>
+                        <div class="stars">
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9734; 
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client-box">
+                        <img src="./image/pic-1.png" alt="" class="client-image">
+                        <h2>John Doe</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, hic sed! Temporibus aliquam quam molestias exercitationem eaque, error sapiente? A!</p>
+                        <div class="stars">
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9734; 
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client-box">
+                        <img src="./image/pic-1.png" alt="" class="client-image">
+                        <h2>John Doe</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, hic sed! Temporibus aliquam quam molestias exercitationem eaque, error sapiente? A!</p>
+                        <div class="stars">
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9734; 
+                        </div>
+                    </div>                </div>
+                <div class="swiper-slide">
+                    <div class="client-box">
+                        <img src="./image/pic-1.png" alt="" class="client-image">
+                        <h2>John Doe</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, hic sed! Temporibus aliquam quam molestias exercitationem eaque, error sapiente? A!</p>
+                        <div class="stars">
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9734; 
+                        </div>
+                    </div>                </div>
+                <div class="swiper-slide">
+                    <div class="client-box">
+                        <img src="./image/pic-1.png" alt="" class="client-image">
+                        <h2>John Doe</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, hic sed! Temporibus aliquam quam molestias exercitationem eaque, error sapiente? A!</p>
+                        <div class="stars">
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9734; 
+                        </div>
+                    </div>                </div>
+                <div class="swiper-slide">
+                    <div class="client-box">
+                        <img src="./image/pic-1.png" alt="" class="client-image">
+                        <h2>John Doe</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, hic sed! Temporibus aliquam quam molestias exercitationem eaque, error sapiente? A!</p>
+                        <div class="stars">
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9734; 
+                        </div>
+                    </div>                </div>
+                <div class="swiper-slide">
+                    <div class="client-box">
+                        <img src="./image/pic-1.png" alt="" class="client-image">
+                        <h2>John Doe</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, hic sed! Temporibus aliquam quam molestias exercitationem eaque, error sapiente? A!</p>
+                        <div class="stars">
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9734; 
+                        </div>
+                    </div>                </div>
+                <div class="swiper-slide">
+                    <div class="client-box">
+                        <img src="./image/pic-1.png" alt="" class="client-image">
+                        <h2>John Doe</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, hic sed! Temporibus aliquam quam molestias exercitationem eaque, error sapiente? A!</p>
+                        <div class="stars">
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9734; 
+                        </div>
+                    </div>                </div>
+                <div class="swiper-slide">
+                    <div class="client-box">
+                        <img src="./image/pic-1.png" alt="" class="client-image">
+                        <h2>John Doe</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, hic sed! Temporibus aliquam quam molestias exercitationem eaque, error sapiente? A!</p>
+                        <div class="stars">
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9733;
+                           &#9734; 
+                        </div>
+                    </div>                </div>
+            </div></div>
+        </div>
+
+    </section>
+    <!-- -----End-Of-Client-Revew------ -->
+    <section class="blog">
+        <h2 class="blog-heading"><span>Our Blogs</span></h2>
+        <div class="blog-container">
+            <div class="blog-first">
+                <img src="./image/blog-1.jpg" alt="" srcset="" class="bolg-img">
+                <h3>Blog Title Goes Here</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, quia.</p>
+                <button class="btn blog-btn">Read More</button>
+            </div>
+            <div class="blog-second">
+                 <img src="./image/blog-1.jpg" alt="" srcset="" class="bolg-img">
+                <h3>Blog Title Goes Here</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, quia.</p>
+                <button class="btn blog-btn">Read More</button>
+            </div>
+            <div class="blog-third">
+                 <img src="./image/blog-1.jpg" alt="" srcset="" class="bolg-img">
+                <h3>Blog Title Goes Here</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, quia.</p>
+                <button class="btn blog-btn">Read More</button>
+            </div>
+        </div>
+    </section>
+    <!-- ------End-Of-Blog----- -->
+    <section class="contact-us">
+        <div class="heading-contact-us">Contact-Us</div>
+        <div class="mobile">
+            <h3>Mobile-No</h3>
+            <p>9931262206</p>
+        </div>
+        <div class="email">
+            <h3>Email</h3>
+            <p>pratyushkarn007@gamil.com</p>
+        </div>
+        <div class="Social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+    </section>
+    <h3 id="name">Developer Pratyush Karn</h3>
+
+
+
+    <!----------End-Of-Project------->
+    <!-- HappyCoding -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const searchMobile = document.querySelector(".mobile-search");
+        const inputBox = document.querySelector(".inputBox");
+        // console.log(searchMobile,inputBox);
+        searchMobile.addEventListener("click", () => {
+            inputBox.classList.toggle("activeSearch")
+        });
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        var swiper = new Swiper(".mySwiper2", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    </script>
+
+    </script>
+
+</body>
+
+</html>
